@@ -1,5 +1,7 @@
 name: Push Jobs
 on: [push]
+permissions: 
+  contents: read
 jobs:
   validate-message:
     name: Validate Commit Message
