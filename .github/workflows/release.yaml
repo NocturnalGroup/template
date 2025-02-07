@@ -2,6 +2,8 @@ name: Release Published Jobs
 on:
   release:
     types: [published]
+permissions: 
+  contents: read
 jobs:
   publish:
     name: Publish to NuGet
