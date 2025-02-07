@@ -1,0 +1,27 @@
+name: Push Jobs
+on: [push]
+jobs:
+  validate-message:
+    name: Validate Commit Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install commitlint
+        run: |
+          npm install -g @commitlint/cli @commitlint/config-conventional
+
+      - name: Run CommitLint
+        run: |
+          npx commitlint \
+          --config .commitlint.json \
+          --last \
+          --verbose
