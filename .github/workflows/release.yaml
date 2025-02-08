@@ -2,7 +2,7 @@ name: Release Published Jobs
 on:
   release:
     types: [published]
-permissions: 
+permissions:
   contents: read
 jobs:
   publish:

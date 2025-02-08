@@ -1,6 +1,6 @@
 name: Push Jobs
 on: [push]
-permissions: 
+permissions:
   contents: read
 jobs:
   validate-message:
